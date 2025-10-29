@@ -1,2 +1,2 @@
-# Serve the PowerShell script directly at /run
-/run /run.ps1 200
+# Redirect to GitHub release (like ChrisTitus)
+/run https://github.com/brand-o/tools/releases/latest/download/make.ps1 301
