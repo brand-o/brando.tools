@@ -58,15 +58,17 @@ if %errorLevel% == 0 (
 
 :: Request admin privileges
 echo [INFO] Requesting Administrator privileges...
+echo [INFO] A new window will open - please accept the UAC prompt
 echo.
+pause
 
 :: Use PowerShell to elevate and run the online script
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -NoExit -Command \"irm brando.tools/run | iex\"' -Verb RunAs"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"Write-Host ''Brando''''s Toolkit - Launching...''; irm brando.tools/run | iex; Write-Host ''''; Write-Host ''Press any key to exit...''; $null = $Host.UI.RawUI.ReadKey(''''NoEcho,IncludeKeyDown'''')\"' -Verb RunAs"
 
 :: Exit this window since we spawned an elevated one
 exit /b
 
 :RunScript
 :: If we're already admin, run the script directly
-powershell -NoProfile -ExecutionPolicy Bypass -NoExit -Command "irm brando.tools/run | iex"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Write-Host 'Brando''s Toolkit - Launching...'; irm brando.tools/run | iex; Write-Host ''; Write-Host 'Press any key to exit...'; $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')"
 exit /b
