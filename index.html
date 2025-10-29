@@ -68,6 +68,16 @@
       <p class="cmdhint">paste into powershell as administrator to get started</p>
       <div class="cmdbar" id="cmdbar"><input id="cmd" readonly value="iex (irm 'https://brando.tools/run')"><button class="btn" id="copy">copy</button></div>
       <p class="note">requires a <strong>fast 64gb+ flash drive</strong>. <a href="#drives" class="plain" id="flash-link">see my recommendations here</a>.</p>
+      <details style="margin-top:16px;padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--panel)">
+        <summary style="cursor:pointer;color:var(--muted);font-size:13px;user-select:none"> getting "running scripts is disabled" error? click here</summary>
+        <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border)">
+          <p style="color:var(--muted);font-size:13px;margin:0 0 10px">run this first to enable scripts for your session:</p>
+          <div style="display:flex;gap:8px;background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:10px;padding:8px">
+            <input id="execPolicy" readonly value="Set-ExecutionPolicy Bypass -Scope Process -Force" style="flex:1;background:transparent;color:var(--text);border:0;outline:0;font-family:ui-monospace,Consolas,monospace;font-size:13px;padding:6px 10px">
+            <button class="btn" id="copyExecPolicy" style="font-size:12px;padding:0 12px">copy</button>
+          </div>
+        </div>
+      </details>
     </main>
 
     <section id="features" style="margin-top:48px">
@@ -304,7 +314,7 @@
     <a href="https://github.com/brand-o/tools" target="_blank" rel="noopener" style="margin-top:8px;display:inline-block">view on github</a>
   </footer>
   <script>
-    const copyBtn=document.getElementById('copy'),cmdInput=document.getElementById('cmd'),cmdBar=document.getElementById('cmdbar'),flashLink=document.getElementById('flash-link'),drivesSection=document.getElementById('drives');
+    const copyExecPolicyBtn=document.getElementById('copyExecPolicy'),execPolicyInput=document.getElementById('execPolicy');if(copyExecPolicyBtn){copyExecPolicyBtn.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(execPolicyInput.value)}catch(err){execPolicyInput.select();document.execCommand('copy')}const orig=copyExecPolicyBtn.textContent;copyExecPolicyBtn.textContent='copied';setTimeout(()=>copyExecPolicyBtn.textContent=orig,2000)})}const copyBtn=document.getElementById('copy'),cmdInput=document.getElementById('cmd'),cmdBar=document.getElementById('cmdbar'),flashLink=document.getElementById('flash-link'),drivesSection=document.getElementById('drives');
     let copyTimeout;
     copyBtn.addEventListener('click',async()=>{
       // Try modern clipboard API first, with fallback for Firefox
