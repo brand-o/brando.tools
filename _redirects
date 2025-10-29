@@ -1,0 +1,2 @@
+# Redirect /run to raw GitHub URL for PowerShell script
+/run https://raw.githubusercontent.com/brand-o/tools/main/make.ps1 200
