@@ -1,1 +1,2 @@
-/run https://raw.githubusercontent.com/brand-o/tools/main/make.ps1 200!
+# Serve the PowerShell script directly at /run
+/run /run.ps1 200

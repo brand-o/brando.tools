@@ -1,4 +1,8 @@
-# Headers for proper content-type serving
+# Headers for PowerShell script
+/run.ps1
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: no-cache
+
 /run
   Content-Type: text/plain; charset=utf-8
   Cache-Control: no-cache
