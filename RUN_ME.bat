@@ -16,7 +16,7 @@
 :: You should have received a copy of the GNU General Public License
 :: along with this program.  If not, see https://www.gnu.org/licenses/.
 :: ============================================================================
-:: This batch file downloads and runs the toolkit from brando.tools
+:: This batch file downloads and runs make.ps1 from brando.tools
 :: with admin privileges automatically. Just double-click to start!
 :: ============================================================================
 
