@@ -1,8 +1,13 @@
-# Serve PowerShell script as text/plain
-/run.ps1
-  Content-Type: text/plain; charset=utf-8
-  Cache-Control: no-cache
-
 /run
   Content-Type: text/plain; charset=utf-8
+  X-Content-Type-Options: nosniff
+  Cache-Control: no-cache
+
+/make.ps1
+  Content-Type: text/plain; charset=utf-8
+  X-Content-Type-Options: nosniff
+  Cache-Control: no-cache
+
+/bundle.json
+  Content-Type: application/json; charset=utf-8
   Cache-Control: no-cache
