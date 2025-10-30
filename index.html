@@ -337,53 +337,6 @@
       },5000);
     });
     flashLink.addEventListener('click',()=>{setTimeout(()=>{drivesSection.classList.add('highlight');setTimeout(()=>drivesSection.classList.remove('highlight'),1e3)},300)});
-    
-    // Recommendation form handler
-    const recForm=document.getElementById('recForm'),recInput=document.getElementById('recInput');
-    if(recForm){recForm.addEventListener('submit',async(e)=>{
-      e.preventDefault();
-      const tool=recInput.value.trim();
-      if(!tool)return;
-      
-      const btn=recForm.querySelector('button');
-      const originalText=btn.textContent;
-      btn.disabled=true;
-      btn.textContent='sending...';
-      
-      try{
-        const response=await fetch('https://api.github.com/repos/brand-o/tools/issues',{
-          method:'POST',
-          headers:{
-            'Content-Type':'application/json',
-            'Accept':'application/vnd.github.v3+json',
-            'Authorization':'Bearer YOUR_GITHUB_TOKEN_HERE' // Replace with your GitHub fine-grained PAT
-          },
-          body:JSON.stringify({
-            title:`Tool Recommendation: ${tool}`,
-            body:`A user recommended adding: **${tool}**\n\nSubmitted from: https://brando.tools\nTimestamp: ${new Date().toISOString()}`,
-            labels:['recommendation','user-submitted']
-          })
-        });
-        
-        if(response.ok){
-          btn.textContent='sent!';
-          recInput.value='';
-          setTimeout(()=>{
-            btn.textContent=originalText;
-            btn.disabled=false;
-          },3000);
-        }else{
-          throw new Error(`GitHub API error: ${response.status}`);
-        }
-      }catch(err){
-        console.error('Failed to submit recommendation:',err);
-        btn.textContent='failed';
-        setTimeout(()=>{
-          btn.textContent=originalText;
-          btn.disabled=false;
-        },3000);
-      }
-    })}
   </script>
 </body>
 </html>
