@@ -67,17 +67,7 @@
       <p class="subtitle">a clean no‑nonsense flash drive installer packed with installers, tools, utilities, and scripts in a nice all‑in‑one automated package.</p>
       <p class="cmdhint">paste into powershell as administrator to get started</p>
       <div class="cmdbar" id="cmdbar"><input id="cmd" readonly value="iex (irm 'https://brando.tools/run')"><button class="btn" id="copy">copy</button></div>
-      <p class="note">requires a <strong>fast 128gb+ flash drive</strong>. <a href="#drives" class="plain" id="flash-link">see my recommendations here</a>.</p>
-      <details style="margin-top:16px;padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--panel)">
-        <summary style="cursor:pointer;color:var(--muted);font-size:13px;user-select:none"> getting "running scripts is disabled" error? click here</summary>
-        <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border)">
-          <p style="color:var(--muted);font-size:13px;margin:0 0 10px">run this first to enable scripts for your session:</p>
-          <div style="display:flex;gap:8px;background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:10px;padding:8px">
-            <input id="execPolicy" readonly value="Set-ExecutionPolicy Bypass -Scope Process -Force" style="flex:1;background:transparent;color:var(--text);border:0;outline:0;font-family:ui-monospace,Consolas,monospace;font-size:13px;padding:6px 10px">
-            <button class="btn" id="copyExecPolicy" style="font-size:12px;padding:0 12px">copy</button>
-          </div>
-        </div>
-      </details>
+      <p class="note">requires a <strong>fast 64gb+ flash drive</strong>. <a href="#drives" class="plain" id="flash-link">see my recommendations here</a>.</p>
     </main>
 
     <section id="features" style="margin-top:48px">
@@ -88,7 +78,7 @@
           <li><span class="feat-num">1.</span><span class="feat-text"><strong>auto‑detects</strong> all connected flash drives</span></li>
           <li><span class="feat-num">2.</span><span class="feat-text"><strong>select</strong> your target drive from the list</span></li>
           <li><span class="feat-num">3.</span><span class="feat-text"><strong>formats & partitions</strong> the drive automatically</span></li>
-          <li><span class="feat-num">4.</span><span class="feat-text"><strong>downloads</strong> tools, isos, drivers, and scripts from official or reliable sources</span></li>
+          <li><span class="feat-num">4.</span><span class="feat-text"><strong>downloads</strong> tools, isos, drivers, and scripts from original or reliable sources<br><span style="font-size:10px">(checks hashes where available)</span></span></li>
           <li><span class="feat-num">5.</span><span class="feat-text"><strong>organizes</strong> everything into a clean folder structure</span></li>
           <li><span class="feat-num">6.</span><span class="feat-text"><strong>makes bootable via ventoy</strong> — ready to use as your ultimate tech toolkit</span></li>
         </ul>
@@ -99,25 +89,25 @@
       <h3 class="section-head">included tools</h3>
       <div class="group-grid">
         <section class="group">
-          <h4>isos / boot (organized by category)</h4>
+          <h4>isos / boot</h4>
           <ul class="taglist">
-            <li><strong>Windows OSes:</strong></li>
-            <li>01 - Windows 11 Pro (Modded - No TPM)</li>
-            <li>02 - Windows 10 Pro (Official)</li>
-            <li>03 - Windows 11 Enterprise LTSC</li>
-            <li>04 - Tiny11 (Lightweight)</li>
-            <li>05 - Live11 (Portable)</li>
-            <li><strong>Linux OSes:</strong></li>
-            <li>06 - Kali Linux (Pen Testing)</li>
-            <li>07 - Linux Mint (Beginner Friendly)</li>
-            <li>08 - Fedora Workstation</li>
-            <li>09 - Tails (Privacy/Anonymous)</li>
-            <li><strong>Bootable Tools:</strong></li>
-            <li>10 - GParted (Partition Editor)</li>
-            <li>11 - Hiren's BootCD PE (Recovery)</li>
-            <li>12 - Clonezilla (Disk Cloning)</li>
-            <li>13 - Rescuezilla (Easy Backup)</li>
-            <li>14 - Memtest86+ (RAM Testing)</li>
+            <li>Windows 11 Pro (Stock)</li>
+            <li>Windows 11 Pro (Modded)</li>
+            <li>Windows 10 Pro</li>
+            <li>Windows 11 Enterprise LTSC</li>
+            <li>Windows 10 Enterprise LTSC</li>
+            <li>Tiny11</li>
+            <li>Live11</li>
+            <li>Linux Mint Cinnamon</li>
+            <li>Fedora Workstation</li>
+            <li>Kali Linux</li>
+            <li>Tails</li>
+            <li>Hiren's Boot PE</li>
+            <li>GParted Live</li>
+            <li>Rescuezilla</li>
+            <li>Clonezilla</li>
+            <li>MemTest86+</li>
+            <li>Macrium Reflect Free</li>
           </ul>
         </section>
 
@@ -133,8 +123,8 @@
             <li>Intel Bluetooth Driver</li>
             <li>Realtek Bluetooth Driver</li>
             <li>AMD Chipset Software</li>
-            <li>NVIDIA App</li>
-            <li>AMD Adrenalin Software</li>
+            <li>Snappy Driver Installer Origin</li>
+            <li>Basic Driver Pack</li>
           </ul>
         </section>
 
@@ -240,9 +230,9 @@
         <span class="fineprint">i may earn a small commission if you buy through these links at no extra cost to you.</span>
       </div>
       <div class="card-row">
-        <a class="linkcard" href="https://amzn.to/4hxdqQl" target="_blank" rel="noopener">
+        <a class="linkcard" href="https://amzn.to/4o9ASpy" target="_blank" rel="noopener">
           <span class="kicker">budget</span>
-          <span class="size"><strong>128gb</strong></span>
+          <span class="size"><strong>64gb</strong></span>
           <span class="spec">usb‑a • 3.2 gen 1</span>
         </a>
         <a class="linkcard" href="https://amzn.to/3Jg0qCa" target="_blank" rel="noopener">
@@ -315,7 +305,7 @@
     <a href="https://github.com/brand-o/tools" target="_blank" rel="noopener" style="margin-top:8px;display:inline-block">view on github</a>
   </footer>
   <script>
-    const copyExecPolicyBtn=document.getElementById('copyExecPolicy'),execPolicyInput=document.getElementById('execPolicy');if(copyExecPolicyBtn){copyExecPolicyBtn.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(execPolicyInput.value)}catch(err){execPolicyInput.select();document.execCommand('copy')}const orig=copyExecPolicyBtn.textContent;copyExecPolicyBtn.textContent='copied';setTimeout(()=>copyExecPolicyBtn.textContent=orig,2000)})}const copyBtn=document.getElementById('copy'),cmdInput=document.getElementById('cmd'),cmdBar=document.getElementById('cmdbar'),flashLink=document.getElementById('flash-link'),drivesSection=document.getElementById('drives');
+    const copyBtn=document.getElementById('copy'),cmdInput=document.getElementById('cmd'),cmdBar=document.getElementById('cmdbar'),flashLink=document.getElementById('flash-link'),drivesSection=document.getElementById('drives');
     let copyTimeout;
     copyBtn.addEventListener('click',async()=>{
       // Try modern clipboard API first, with fallback for Firefox
@@ -338,6 +328,54 @@
       },5000);
     });
     flashLink.addEventListener('click',()=>{setTimeout(()=>{drivesSection.classList.add('highlight');setTimeout(()=>drivesSection.classList.remove('highlight'),1e3)},300)});
+    
+    // Recommendation form handler
+    const recForm=document.getElementById('recForm'),recInput=document.getElementById('recInput');
+    recForm.addEventListener('submit',async(e)=>{
+      e.preventDefault();
+      const tool=recInput.value.trim();
+      if(!tool)return;
+      
+      const btn=recForm.querySelector('button');
+      const originalText=btn.textContent;
+      btn.disabled=true;
+      btn.textContent='sending...';
+      
+      try{
+        // GitHub API endpoint for creating issues in brand-o/tools repo
+        const response=await fetch('https://api.github.com/repos/brand-o/tools/issues',{
+          method:'POST',
+          headers:{
+            'Content-Type':'application/json',
+            'Accept':'application/vnd.github.v3+json',
+            'Authorization':'Bearer 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E' // Replace with actual token
+          },
+          body:JSON.stringify({
+            title:`Tool Recommendation: ${tool}`,
+            body:`A user recommended adding: **${tool}**\n\nSubmitted from: https://brando.tools\nTimestamp: ${new Date().toISOString()}`,
+            labels:['recommendation','user-submitted']
+          })
+        });
+        
+        if(response.ok){
+          btn.textContent='sent!';
+          recInput.value='';
+          setTimeout(()=>{
+            btn.textContent=originalText;
+            btn.disabled=false;
+          },3000);
+        }else{
+          throw new Error(`GitHub API error: ${response.status}`);
+        }
+      }catch(err){
+        console.error('Failed to submit recommendation:',err);
+        btn.textContent='failed';
+        setTimeout(()=>{
+          btn.textContent=originalText;
+          btn.disabled=false;
+        },3000);
+      }
+    });
   </script>
 </body>
 </html>
