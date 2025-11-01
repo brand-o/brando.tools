@@ -25,7 +25,8 @@
     .cmdbar.highlight{box-shadow:0 0 0 4px var(--highlight)!important;border-color:rgba(125,211,252,.4)!important}
     .aff.highlight{box-shadow:0 0 0 4px var(--highlight)!important;border-color:rgba(125,211,252,.4)!important}
     .cmdbar input{flex:1;background:transparent;color:var(--text);border:0;outline:0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;padding:12px 14px}
-    .btn{border:1px solid var(--border);background:rgba(255,255,255,.05);color:var(--text);border-radius:12px;padding:0 14px;font-size:14px;cursor:pointer;transition:opacity .2s,color .2s}
+    .btn{border:1px solid var(--border);background:rgba(255,255,255,.05);color:var(--text);border-radius:12px;padding:0 14px;font-size:14px;cursor:pointer;transition:opacity .2s,color .2s;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;height:38px}
+    .btn:hover{background:rgba(255,255,255,.08)}
     .group-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
     .group{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px}
     .group h4{margin:0 0 10px;font-size:13px;color:var(--muted)}
@@ -66,7 +67,7 @@
       <h1 class="title">brando's toolkit</h1>
       <p class="subtitle">a clean no‑nonsense flash drive installer packed with installers, tools, utilities, and scripts in a nice all‑in‑one automated package.</p>
       <p class="cmdhint">paste into powershell as administrator to get started</p>
-      <div class="cmdbar" id="cmdbar"><input id="cmd" readonly value="iex (irm 'https://brando.tools/run')"><button class="btn" id="copy">copy</button></div>
+      <div class="cmdbar" id="cmdbar"><input id="cmd" readonly value="iex (irm 'https://brando.tools/run')"><button class="btn" id="copy">copy</button><a class="btn" href="https://raw.githubusercontent.com/brand-o/tools/main/RUN_ME.bat" download="RUN_ME.bat">download .bat</a></div>
       <p class="note">requires a <strong>fast 64gb+ flash drive</strong>. <a href="#drives" class="plain" id="flash-link">see my recommendations here</a>.</p>
     </main>
 
@@ -132,32 +133,42 @@
           <h4>installers / programs</h4>
           <ul class="taglist">
             <li>7-Zip 25.01</li>
-            <li>Git for Windows</li>
+            <li>AMD Software Adrenalin</li>
+            <li>Android Platform Tools</li>
+            <li>AnyDesk</li>
+            <li>Audacity</li>
+            <li>BleachBit</li>
+            <li>Brave Browser</li>
             <li>Bulk Crap Uninstaller</li>
-            <li>Revo Uninstaller Free</li>
-            <li>Rufus</li>
+            <li>DBeaver Community</li>
+            <li>Discord</li>
+            <li>Everything Search</li>
+            <li>FileZilla</li>
+            <li>Git for Windows</li>
+            <li>HandBrake</li>
+            <li>HWiNFO64</li>
+            <li>ImageGlass</li>
             <li>LibreOffice 25.8.2</li>
-            <li>ONLYOFFICE Desktop Editors</li>
             <li>Microsoft Office Deployment Tool</li>
             <li>Mozilla Firefox</li>
-            <li>Brave Browser</li>
-            <li>Discord</li>
-            <li>ProtonVPN 4.3.5</li>
-            <li>VLC Media Player 3.0.21</li>
-            <li>qBittorrent 5.1.2</li>
-            <li>Steam</li>
-            <li>VS Code</li>
             <li>Node.js LTS 22.21.0</li>
-            <li>Python 3.13.1</li>
-            <li>HWiNFO64</li>
-            <li>Android Platform Tools</li>
-            <li>VirtualBox 7.1.4</li>
-            <li>Wireshark 4.6.0</li>
-            <li>FileZilla</li>
-            <li>TeamViewer</li>
-            <li>AnyDesk</li>
             <li>NVIDIA App</li>
-            <li>AMD Software Adrenalin</li>
+            <li>OBS Studio</li>
+            <li>ONLYOFFICE Desktop Editors</li>
+            <li>Postman</li>
+            <li>ProtonVPN 4.3.5</li>
+            <li>Python 3.13.1</li>
+            <li>qBittorrent 5.1.2</li>
+            <li>Revo Uninstaller Free</li>
+            <li>Rufus</li>
+            <li>ShareX</li>
+            <li>Steam</li>
+            <li>TeamViewer</li>
+            <li>VirtualBox 7.1.4</li>
+            <li>VLC Media Player 3.0.21</li>
+            <li>VS Code</li>
+            <li>Wireshark 4.6.0</li>
+            <li>WizTree</li>
           </ul>
         </section>
 
@@ -261,13 +272,18 @@
       <div class="credits-line">
         <a class="tag" href="https://www.7-zip.org/" target="_blank" rel="noopener">7-Zip</a>
         <a class="tag" href="https://angryip.org/" target="_blank" rel="noopener">Angry IP Scanner</a>
+        <a class="tag" href="https://www.audacityteam.org/" target="_blank" rel="noopener">Audacity</a>
         <a class="tag" href="https://github.com/balena-io/etcher" target="_blank" rel="noopener">Balena Etcher</a>
+        <a class="tag" href="https://bleachbit.org/" target="_blank" rel="noopener">BleachBit</a>
         <a class="tag" href="https://github.com/ChrisTitusTech" target="_blank" rel="noopener">ChristTitusTech</a>
         <a class="tag" href="https://clonezilla.org/" target="_blank" rel="noopener">Clonezilla</a>
+        <a class="tag" href="https://dbeaver.io/" target="_blank" rel="noopener">DBeaver</a>
         <a class="tag" href="https://fedoraproject.org/" target="_blank" rel="noopener">Fedora</a>
         <a class="tag" href="https://filezilla-project.org/" target="_blank" rel="noopener">FileZilla</a>
         <a class="tag" href="https://gitforwindows.org/" target="_blank" rel="noopener">Git for Windows</a>
         <a class="tag" href="https://gparted.org/" target="_blank" rel="noopener">GParted</a>
+        <a class="tag" href="https://handbrake.fr/" target="_blank" rel="noopener">HandBrake</a>
+        <a class="tag" href="https://imageglass.org/" target="_blank" rel="noopener">ImageGlass</a>
         <a class="tag" href="https://sourceforge.net/projects/imdisk-toolkit/" target="_blank" rel="noopener">ImDisk</a>
         <a class="tag" href="https://www.kali.org/" target="_blank" rel="noopener">Kali Linux</a>
         <a class="tag" href="https://keepassxc.org/" target="_blank" rel="noopener">KeePassXC</a>
@@ -279,6 +295,7 @@
         <a class="tag" href="https://nmap.org/" target="_blank" rel="noopener">Nmap</a>
         <a class="tag" href="https://notepad-plus-plus.org/" target="_blank" rel="noopener">Notepad++</a>
         <a class="tag" href="https://github.com/ntdevlabs/tiny11builder" target="_blank" rel="noopener">NTDEV (Tiny11)</a>
+        <a class="tag" href="https://obsproject.com/" target="_blank" rel="noopener">OBS Studio</a>
         <a class="tag" href="https://www.onlyoffice.com/" target="_blank" rel="noopener">ONLYOFFICE</a>
         <a class="tag" href="https://github.com/pbatard" target="_blank" rel="noopener">pbatard (rufus / fido)</a>
         <a class="tag" href="https://pdfsam.org/" target="_blank" rel="noopener">PDFsam</a>
@@ -286,9 +303,11 @@
         <a class="tag" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/" target="_blank" rel="noopener">PuTTY</a>
         <a class="tag" href="https://www.qbittorrent.org/" target="_blank" rel="noopener">qBittorrent</a>
         <a class="tag" href="https://rescuezilla.com/" target="_blank" rel="noopener">Rescuezilla</a>
+        <a class="tag" href="https://getsharex.com/" target="_blank" rel="noopener">ShareX</a>
         <a class="tag" href="https://tails.net/" target="_blank" rel="noopener">Tails</a>
         <a class="tag" href="https://www.cgsecurity.org/" target="_blank" rel="noopener">TestDisk / PhotoRec</a>
         <a class="tag" href="https://github.com/gorhill/uBlock" target="_blank" rel="noopener">uBlock Origin</a>
+        <a class="tag" href="https://uupdump.net/" target="_blank" rel="noopener">UUPdump</a>
         <a class="tag" href="https://github.com/ventoy/Ventoy" target="_blank" rel="noopener">Ventoy</a>
         <a class="tag" href="https://www.virtualbox.org/" target="_blank" rel="noopener">VirtualBox</a>
         <a class="tag" href="https://www.videolan.org/" target="_blank" rel="noopener">VLC</a>
