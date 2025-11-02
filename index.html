@@ -10,7 +10,7 @@
   <style>
     :root{--bg:#0b0d10;--panel:#0f1216;--muted:#9aa3ad;--text:#e6ebf0;--border:#1a2027;--highlight:rgba(125,211,252,.25);--link-underline:rgba(125,211,252,.7);--link-underline-hover:rgba(147,197,253,.95)}
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;overflow-x:hidden;width:100%}
     html{scroll-behavior:smooth}
     .wrap{max-width:980px;margin:0 auto;padding:64px 20px}
     .hero{padding:56px 0 40px}
@@ -63,8 +63,10 @@
     .tooltip-content strong{color:rgba(125,211,252,.9);font-weight:600}
     .tooltip-content ul{margin:6px 0;padding-left:16px;list-style:disc}
     .tooltip-content li{margin:3px 0}
+    .tooltip-trigger.active .tooltip-content{opacity:1}
+    .tooltip-trigger.active .tooltip-icon{background:rgba(125,211,252,.15);border-color:rgba(125,211,252,.4);color:rgba(125,211,252,.9)}
     @media(max-width:960px){.card-row{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:720px){.group-grid{grid-template-columns:1fr};.tooltip-content{left:auto;right:0;top:calc(100% + 8px);transform:none;width:260px;max-width:calc(100vw - 40px)};.tooltip-content::after{right:auto;left:20px;top:auto;bottom:100%;transform:none;border:6px solid transparent;border-bottom-color:var(--border)};.cmdbar{flex-wrap:wrap};.cmdbar input{min-width:100%}}
+    @media(max-width:720px){.group-grid{grid-template-columns:1fr};.tooltip-content{left:auto;right:0;top:calc(100% + 8px);transform:none;width:260px;max-width:calc(100vw - 40px)};.tooltip-content::after{right:auto;left:20px;top:auto;bottom:100%;transform:none;border:6px solid transparent;border-bottom-color:var(--border)};.cmdbar{flex-wrap:wrap};.cmdbar input{width:100%;flex:1 1 100%};.btn{flex:1}}
     @media(max-width:560px){.card-row{grid-template-columns:1fr};.tooltip-content{width:240px}}
   </style>
 </head>
@@ -360,6 +362,24 @@
       }
     });
     flashLink.addEventListener('click',()=>{setTimeout(()=>{drivesSection.classList.add('highlight');setTimeout(()=>drivesSection.classList.remove('highlight'),1e3)},300)});
+    
+    // Mobile tooltip toggle
+    document.querySelectorAll('.tooltip-trigger').forEach(trigger=>{
+      trigger.addEventListener('click',(e)=>{
+        e.preventDefault();
+        e.stopPropagation();
+        // Close other tooltips
+        document.querySelectorAll('.tooltip-trigger').forEach(t=>{
+          if(t!==trigger)t.classList.remove('active');
+        });
+        // Toggle this tooltip
+        trigger.classList.toggle('active');
+      });
+    });
+    // Close tooltip when clicking outside
+    document.addEventListener('click',()=>{
+      document.querySelectorAll('.tooltip-trigger').forEach(t=>t.classList.remove('active'));
+    });
     
     // Recommendation form handler
     const recForm=document.getElementById('recForm'),recInput=document.getElementById('recInput');
