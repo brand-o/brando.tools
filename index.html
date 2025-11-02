@@ -63,11 +63,13 @@
     .tooltip-content strong{color:rgba(125,211,252,.9);font-weight:600}
     .tooltip-content ul{margin:6px 0;padding-left:16px;list-style:disc}
     .tooltip-content li{margin:3px 0}
-    .tooltip-trigger.active .tooltip-content{opacity:1}
+    .tooltip-trigger.active .tooltip-content{opacity:1;pointer-events:auto}
     .tooltip-trigger.active .tooltip-icon{background:rgba(125,211,252,.15);border-color:rgba(125,211,252,.4);color:rgba(125,211,252,.9)}
+    .tooltip-close{display:none;position:absolute;top:8px;right:8px;width:20px;height:20px;border:none;background:rgba(255,255,255,.1);color:var(--text);border-radius:50%;cursor:pointer;font-size:14px;line-height:1;padding:0;transition:background .2s}
+    .tooltip-close:hover{background:rgba(255,255,255,.2)}
     @media(max-width:960px){.card-row{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:720px){.group-grid{grid-template-columns:1fr};.tooltip-content{left:auto;right:0;top:calc(100% + 8px);transform:none;width:260px;max-width:calc(100vw - 40px)};.tooltip-content::after{right:auto;left:20px;top:auto;bottom:100%;transform:none;border:6px solid transparent;border-bottom-color:var(--border)};.cmdbar{flex-wrap:wrap};.cmdbar input{width:100%;flex:1 1 100%};.btn{flex:1}}
-    @media(max-width:560px){.card-row{grid-template-columns:1fr};.tooltip-content{width:240px}}
+    @media(max-width:720px){.group-grid{grid-template-columns:1fr};.tooltip-content{left:50%;right:auto;top:calc(100% + 8px);transform:translateX(-50%);width:calc(100vw - 40px);max-width:320px};.tooltip-content::after{right:auto;left:50%;transform:translateX(-50%);top:auto;bottom:100%;border:6px solid transparent;border-bottom-color:var(--border)};.tooltip-close{display:block};.cmdbar{flex-wrap:wrap};.cmdbar input{width:100%;flex:1 1 100%};#download-bat{display:none}}
+    @media(max-width:560px){.card-row{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -102,7 +104,7 @@
           <h4>isos / boot</h4>
           <ul class="taglist">
             <li>Windows 11 Pro (Stock)</li>
-            <li class="tooltip-trigger">Windows 11 Pro (Modded)<span class="tooltip-icon">?</span><div class="tooltip-content"><strong>Uses official Microsoft ISO</strong><br>Downloads the stock Win11 Pro ISO from Microsoft, then applies registry modifications:<ul><li>TPM 2.0 bypass</li><li>Secure Boot bypass</li><li>RAM/CPU/Storage bypasses</li><li>Local account allowed (no MS account required)</li><li>Privacy questions skipped</li><li>Telemetry disabled</li><li>BitLocker auto-encryption disabled</li><li>Bloatware/Consumer Features disabled</li><li>Copilot auto-removed</li><li>Product key prompt skipped</li></ul></div></li>
+            <li class="tooltip-trigger">Windows 11 Pro (Modded)<span class="tooltip-icon">?</span><div class="tooltip-content"><button class="tooltip-close" aria-label="Close">×</button><strong>Uses official Microsoft ISO</strong><br>Downloads the stock Win11 Pro ISO from Microsoft, then applies registry modifications:<ul><li>TPM 2.0 bypass</li><li>Secure Boot bypass</li><li>RAM/CPU/Storage bypasses</li><li>Local account allowed (no MS account required)</li><li>Privacy questions skipped</li><li>Telemetry disabled</li><li>BitLocker auto-encryption disabled</li><li>Bloatware/Consumer Features disabled</li><li>Copilot auto-removed</li><li>Product key prompt skipped</li></ul></div></li>
             <li>Windows 10 Pro</li>
             <li>Windows 11 Enterprise LTSC 2024</li>
             <li>Tiny11</li>
@@ -376,9 +378,19 @@
         trigger.classList.toggle('active');
       });
     });
+    // Close button handler
+    document.querySelectorAll('.tooltip-close').forEach(btn=>{
+      btn.addEventListener('click',(e)=>{
+        e.preventDefault();
+        e.stopPropagation();
+        btn.closest('.tooltip-trigger').classList.remove('active');
+      });
+    });
     // Close tooltip when clicking outside
-    document.addEventListener('click',()=>{
-      document.querySelectorAll('.tooltip-trigger').forEach(t=>t.classList.remove('active'));
+    document.addEventListener('click',(e)=>{
+      if(!e.target.closest('.tooltip-trigger')){
+        document.querySelectorAll('.tooltip-trigger').forEach(t=>t.classList.remove('active'));
+      }
     });
     
     // Recommendation form handler
