@@ -66,8 +66,8 @@
     .tooltip-content ul{margin:6px 0;padding-left:16px;list-style:disc}
     .tooltip-content li{margin:3px 0}
     @media(max-width:960px){.card-row{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:720px){.group-grid{grid-template-columns:1fr}}
-    @media(max-width:560px){.card-row{grid-template-columns:1fr}}.tooltip-content{width:240px}
+    @media(max-width:720px){.group-grid{grid-template-columns:1fr};.tooltip-content{left:auto;right:0;top:calc(100% + 8px);transform:none;width:260px;max-width:calc(100vw - 40px)};.tooltip-content::after{right:auto;left:20px;top:auto;bottom:100%;transform:none;border:6px solid transparent;border-bottom-color:var(--border)};.cmdbar{flex-wrap:wrap};.cmdbar input{min-width:100%}}
+    @media(max-width:560px){.card-row{grid-template-columns:1fr};.tooltip-content{width:240px}}
   </style>
 </head>
 <body>
